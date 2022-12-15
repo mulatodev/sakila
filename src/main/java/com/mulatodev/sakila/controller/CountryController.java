@@ -17,43 +17,40 @@ import java.util.ArrayList;*/
 
 @RestController
 @Transactional
+@RequestMapping("/api")
 public class CountryController {
 
     @Autowired
     private ICountryRepository countryRepository;
 
     // CREATE Methods
-    @RequestMapping(value = "api/country", method = RequestMethod.POST)
+    @PostMapping("/country")
     public CountryModel registerCountry(@RequestBody CountryModel country){
-        //countryRepository.registerCountry(country);
-        System.out.println("controller");
         return countryRepository.save(country);
     }
     // End CREATE Methods
 
     // READ Methods
-    @RequestMapping(value = "api/country/{id}", method = RequestMethod.GET)
-    public List<CountryModel> getCountry(@PathVariable short id){
-        
+    @GetMapping("/country/{id}")
+    public List<CountryModel> getCountry(@PathVariable short id){        
         return countryRepository.findById(id);
     }
 
-    @RequestMapping(value = "api/countries", method = RequestMethod.GET)
+    @GetMapping("/countries")
     public List<CountryModel> getCountries(){
-
         return countryRepository.findAll();
     }
     // End READ Methods
 
     // UPDATE Methods
-    /*@RequestMapping(value = "api/country/{id}", method = RequestMethod.PUT)
-    public void updateCountry(@PathVariable short id){
-        countryRepository.updateCountry(id);
-    }*/
+    @PutMapping("/country/{id}")
+    public CountryModel updateCountry(@PathVariable short id, @RequestBody CountryModel country){
+        return countryRepository.saveAndFlush(country);
+    }
     // End UPDATE Methods
 
     // DELETE Methods
-    @RequestMapping(value = "api/removecountry/{id}", method = RequestMethod.DELETE)
+    @DeleteMapping("/country/{id}")
     public void deleteCountry(@PathVariable short id){
         countryRepository.deleteById(id);
     }

@@ -26,6 +26,8 @@ public interface ICountryRepository extends JpaRepository<CountryModel, Long> {
 
     // UPDATE Methods
     //void updateCountry(CountryModel country);
+    @Override
+    CountryModel saveAndFlush(CountryModel country);
     // End UPDATE Methods
 
     // DELETE Methods
