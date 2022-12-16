@@ -1,32 +1,30 @@
 package com.mulatodev.sakila.repository;
 
-import com.mulatodev.sakila.model.CountryModel;
-
+import com.mulatodev.sakila.model.CityModel;
+import java.util.ArrayList;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.repository.query.Param;
-
-import java.util.ArrayList;
 
 /**
  *
  * @author ganaranjo
  */
-public interface ICountryRepository extends JpaRepository<CountryModel, Long> {
+public interface ICityRepository extends JpaRepository<CityModel, Long>{
     // CREATE Methods
     @Override
-    CountryModel save(CountryModel country);
+    CityModel save(CityModel city);
     // End CREATE Methods
 
     // READ Methods
     @Override
-    ArrayList<CountryModel> findAll();
+    ArrayList<CityModel> findAll();
     
-    ArrayList<CountryModel> findById(@Param("id") short id);
+    ArrayList<CityModel> findById(@Param("id") short id);
     // End READ Methods
 
     // UPDATE Methods
     @Override
-    CountryModel saveAndFlush(CountryModel country);
+    CityModel saveAndFlush(CityModel city);
     // End UPDATE Methods
 
     // DELETE Methods

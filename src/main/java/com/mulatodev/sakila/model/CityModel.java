@@ -1,26 +1,28 @@
 package com.mulatodev.sakila.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
 import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
-
+import jakarta.persistence.Table;
 import java.sql.Timestamp;
+
 /**
  *
  * @author ganaranjo
  */
 @Entity
-@Table(name = "country")
-public class CountryModel {
-    
-    @Column(name = "country_id")
+@Table(name = "city")
+public class CityModel {
+    @Column(name = "city_id")
     @Id
     private short id;
 
-    @Column(name = "country")
-    private String country;
+    @Column(name = "city")
+    private String city;
 
+    @Column(name = "country_id")
+    private short country_id;
+    
     @Column(name = "last_update")
     private Timestamp last_update;
 
@@ -32,12 +34,20 @@ public class CountryModel {
         this.id = id;
     }
 
-    public String getCountry() {
-        return country;
+    public String getCity() {
+        return city;
     }
 
-    public void setCountry(String country) {
-        this.country = country;
+    public void setCity(String city) {
+        this.city = city;
+    }
+
+    public short getCountry_id() {
+        return country_id;
+    }
+
+    public void setCountry_id(short country_id) {
+        this.country_id = country_id;
     }
 
     public Timestamp getLast_update() {
@@ -50,6 +60,6 @@ public class CountryModel {
     
     @Override
     public String toString(){
-        return "Country [Id=" + this.id + ", name= " + this.country + "]";
+        return "City [Id=" + this.id + ", name= " + this.city + "]";
     }
 }
