@@ -9,12 +9,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import java.util.List;
 import org.springframework.transaction.annotation.Transactional;
 
-/*import com.mulatodev.sakila.repository.CountryRepository;
-import org.springframework.web.context.annotation.RequestScope;
-
-import java.sql.Timestamp;
-import java.util.ArrayList;*/
-
 @RestController
 @Transactional
 @RequestMapping("/api")

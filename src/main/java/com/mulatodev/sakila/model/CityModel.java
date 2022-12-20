@@ -13,8 +13,9 @@ import java.sql.Timestamp;
 @Entity
 @Table(name = "city")
 public class CityModel {
-    @Column(name = "city_id")
+    
     @Id
+    @Column(name = "city_id")
     private short id;
 
     @Column(name = "city")

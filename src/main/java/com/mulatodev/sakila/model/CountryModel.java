@@ -14,8 +14,8 @@ import java.sql.Timestamp;
 @Table(name = "country")
 public class CountryModel {
     
-    @Column(name = "country_id")
     @Id
+    @Column(name = "country_id")
     private short id;
 
     @Column(name = "country")
