@@ -1,13 +1,13 @@
 package com.mulatodev.sakila.controller;
 
-import com.mulatodev.sakila.repository.ICountryRepository;
 import com.mulatodev.sakila.model.CountryModel;
+import com.mulatodev.sakila.repository.ICountryRepository;
 
 import org.springframework.web.bind.annotation.*;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
-import org.springframework.transaction.annotation.Transactional;
 
 @RestController
 @Transactional
